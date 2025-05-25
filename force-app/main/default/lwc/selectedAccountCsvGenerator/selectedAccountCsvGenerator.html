@@ -1,0 +1,26 @@
+<template>
+  <lightning-card icon-name="standard:contact" variant="base">
+      <div slot="title">
+          Related Contacts
+      </div>
+      <div>
+          <lightning-datatable
+              key-field="Id"
+              data={contacts}
+              columns={columns}
+              onrowselection={handleRowSelection} 
+          >
+          </lightning-datatable>
+      </div>
+      <lightning-button 
+          variant="neutral"
+          label="Download CSV" 
+          title="Download CSV" 
+          icon-name="utility:download" 
+          icon-position="right" 
+          slot="actions" 
+          disabled={disableButton}
+          onclick={handleClick} 
+      ></lightning-button>
+  </lightning-card>
+</template>
